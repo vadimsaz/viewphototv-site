@@ -48,6 +48,17 @@ For all links and URLs in the application, follow this pattern:
 - ja (Japanese)
 - ko (Korean)
 
+### Language Root Paths
+When user visits just the language path, they are redirected to home:
+```
+/ru → / (with lang=ru preference set)
+/es → / (with lang=es preference set)
+/fr → / (with lang=fr preference set)
+/en → / (canonical English path)
+```
+
+The language preference is stored in a cookie (1 year expiration) so the entire site adapts to the user's chosen language.
+
 ### Implementation
 Use the `getLocalizedUrl()` helper function:
 
