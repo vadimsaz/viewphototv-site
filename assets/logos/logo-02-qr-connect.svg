@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 96" role="img" aria-label="ViewPhoto.TV logo QR connect">
+  <defs>
+    <linearGradient id="g" x1="12" x2="90" y1="12" y2="84" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7c3aed"/>
+      <stop offset=".55" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#15c7ff"/>
+    </linearGradient>
+  </defs>
+  <rect x="12" y="16" width="82" height="58" rx="15" fill="#111827"/>
+  <rect x="18" y="22" width="70" height="42" rx="9" fill="url(#g)"/>
+  <g fill="#fff">
+    <path d="M30 31h12v12H30zM34 35h4v4h-4zM64 31h12v12H64zM68 35h4v4h-4zM30 48h12v12H30zM34 52h4v4h-4zM50 31h5v5h-5zM57 36h5v5h-5zM48 45h8v5h-8zM61 48h5v12h-5zM70 50h6v6h-6zM48 55h9v5h-9z"/>
+  </g>
+  <path d="M42 76h22M53 72v7" stroke="#7c3aed" stroke-width="6" stroke-linecap="round"/>
+  <path d="M82 25c16 1 25 10 26 26" fill="none" stroke="#15c7ff" stroke-width="4" stroke-linecap="round"/>
+  <path d="m105 50 5 5 5-5" fill="none" stroke="#15c7ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="128" y="57" fill="#111827" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="34" font-weight="850">View<tspan fill="#7c3aed">Photo</tspan>.TV</text>
+</svg>

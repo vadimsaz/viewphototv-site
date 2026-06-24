@@ -1,0 +1,45 @@
+# ViewPhoto.TV
+
+> Show selected photos from your phone on any Smart TV via QR code. No apps. No accounts. No screen mirroring. Total privacy.
+
+ViewPhoto.TV is a free browser-based tool. Open the site on your TV, a QR code appears, scan it with your phone, select photos from your device, Google Photos, or iCloud Photos — only those photos appear on the TV. Your full gallery, notifications, and private content remain hidden.
+
+## Key facts
+
+- Works on any Smart TV with a browser (Samsung, LG, Sony, Philips, Google TV, Android TV)
+- Works on iPhone and Android
+- No apps, no accounts, no Wi-Fi pairing required
+- Select photos from local storage, Google Photos, or iCloud Photos via the browser photo picker
+- Multiple people can scan the same QR code and upload photos simultaneously
+- Photos stored temporarily on Cloudflare; deleted automatically when the session ends (default: 180 minutes)
+- All communication encrypted via HTTPS
+- No personal data collected, no tracking, no analytics
+
+## How it works
+
+1. Open viewphoto.tv in the TV browser — a unique QR code appears
+2. Scan the QR code with your phone
+3. Select photos from your gallery, Google Photos, or iCloud Photos
+4. Photos instantly appear on the TV in a clean gallery with full-screen viewer
+
+## Comparison with alternatives
+
+| | AirPlay | Miracast | HDMI | ViewPhoto.TV |
+|---|---|---|---|---|
+| Full gallery hidden | No | No | Yes (cable) | **Yes** |
+| No notifications on TV | No | No | Yes | **Yes** |
+| Any TV | No (Apple) | No (Android) | Yes | **Yes** |
+| Any phone | iPhone | Android | Yes | **Yes** |
+| No setup required | No | No | No (cable) | **Yes** |
+| Multi-user uploads | No | No | No | **Yes** |
+
+## Author
+
+Created by Vadim Sazanovich, Amaryllis Polska.
+
+## Pages
+
+- [Home](https://viewphoto.tv/)
+- [FAQ](https://viewphoto.tv/faq.html)
+- [Privacy Policy](https://viewphoto.tv/privacy.html)
+- [Terms of Service](https://viewphoto.tv/terms.html)

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" x2="0" y1="0" y2="1">
+      <stop stop-color="#f7c58b"/>
+      <stop offset=".45" stop-color="#ffdba8"/>
+      <stop offset=".72" stop-color="#7e95c5"/>
+      <stop offset="1" stop-color="#263c67"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" x2="0" y1="0" y2="1">
+      <stop stop-color="#f3a85e" stop-opacity=".78"/>
+      <stop offset="1" stop-color="#152b55"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="24"/>
+    </filter>
+  </defs>
+  <rect width="900" height="620" fill="url(#sky)"/>
+  <circle cx="470" cy="285" r="54" fill="#fff3ad"/>
+  <circle cx="470" cy="285" r="100" fill="#ffd66b" opacity=".55" filter="url(#glow)"/>
+  <rect y="340" width="900" height="280" fill="url(#water)"/>
+  <g opacity=".7" stroke="#fff2bd" stroke-width="5">
+    <path d="M0 390c120-18 220 20 340-6s250-34 560 2"/>
+    <path d="M0 452c150-22 260 26 390-4s275-24 510 12"/>
+    <path d="M0 520c210-28 320 26 480-4s262-18 420 16"/>
+  </g>
+  <path d="M0 352c155 18 275-34 410-7 145 28 273 31 490-5v280H0z" fill="#1a315d" opacity=".28"/>
+  <g fill="#222337">
+    <g transform="translate(260 300) scale(.78)">
+      <circle cx="0" cy="-54" r="17"/>
+      <path d="M-12-36h24l12 90h-48z"/>
+      <path d="M-10 52-32 116M10 52l28 116M-18-15l-54 44M18-15l56 44" stroke="#222337" stroke-width="12" stroke-linecap="round" fill="none"/>
+    </g>
+    <g transform="translate(380 292)">
+      <circle cx="0" cy="-58" r="19"/>
+      <path d="M-15-38h30l16 102h-62z"/>
+      <path d="M-13 60-42 140M13 60l36 140M-24-17l-70 50M24-17l70 50" stroke="#222337" stroke-width="13" stroke-linecap="round" fill="none"/>
+    </g>
+    <g transform="translate(585 270) scale(1.18)">
+      <circle cx="0" cy="-60" r="20"/>
+      <path d="M-17-39h34l18 117h-70z"/>
+      <path d="M-16 72-52 160M16 72l45 160M-27-14l-72 42M27-14l72 42" stroke="#222337" stroke-width="14" stroke-linecap="round" fill="none"/>
+    </g>
+  </g>
+</svg>

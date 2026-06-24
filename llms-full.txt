@@ -1,0 +1,119 @@
+# ViewPhoto.TV — Full Reference
+
+## What is ViewPhoto.TV?
+
+ViewPhoto.TV is a free, browser-based tool that lets users display selected photos from their smartphone on any Smart TV using a QR code. It requires no apps, no accounts, no Wi-Fi pairing, and no screen mirroring. Users choose exactly which photos appear on the TV — their full gallery, notifications, and other private content remain completely hidden.
+
+## How it works (step by step)
+
+1. Open viewphoto.tv in the browser on any Smart TV.
+2. A temporary session starts and a unique QR code appears on the TV screen.
+3. Scan the QR code with an iPhone or Android phone — no login or installation required.
+4. Select photos from the phone's local gallery, Google Photos, or iCloud Photos using the browser's native photo picker.
+5. Only the selected photos are uploaded and appear on the TV in a clean, full-screen gallery.
+6. The session ends when the TV browser is closed, or automatically after 180 minutes of inactivity.
+7. All photos are deleted from Cloudflare storage automatically when the session ends.
+
+## Key features
+
+- Works on any Smart TV with a modern browser: Samsung, LG, Sony, Philips, Google TV, Android TV
+- Works on iPhone (Safari, Chrome) and all Android phones
+- Photo sources: device storage, Google Photos, iCloud Photos — via the browser's native photo picker
+- Multiple users can scan the same QR code and upload photos to the shared screen simultaneously
+- Full-screen immersive photo viewer on TV
+- No apps on TV or phone
+- No accounts or passwords
+- No Wi-Fi pairing
+- Free to use
+
+## Privacy and security
+
+- Only the photos the user explicitly selects are uploaded — the full photo library is never accessed
+- Photos are stored temporarily on Cloudflare R2 / edge cache during the session only
+- Default session lifetime: 180 minutes; user can end it at any time
+- All photos deleted automatically when the session ends — no permanent storage
+- Photos are not analyzed, indexed, or used for AI training
+- No personal data collected (no names, emails, phone numbers, identifiers)
+- No advertising cookies or tracking SDKs
+- All communication encrypted via HTTPS
+- QR codes contain only a temporary session ID and expire automatically
+
+## Comparison with screen sharing alternatives
+
+ViewPhoto.TV vs AirPlay: AirPlay mirrors the entire phone screen including notifications and the full photo gallery. ViewPhoto.TV shows only selected photos.
+
+ViewPhoto.TV vs Miracast: Miracast mirrors the entire Android screen. ViewPhoto.TV shows only selected photos and works on iPhone too.
+
+ViewPhoto.TV vs HDMI: HDMI requires a cable and mirrors the entire screen. ViewPhoto.TV is wireless and shows only selected photos.
+
+ViewPhoto.TV vs Chromecast: Chromecast requires the same Wi-Fi network and a compatible app. ViewPhoto.TV works on any Smart TV browser with no setup.
+
+## Use cases
+
+- Showing travel photos or vacation memories on a big screen
+- Sharing wedding, birthday, or event photos with guests in real time
+- Family gatherings where multiple people contribute photos
+- Corporate events and presentations with shared photo feeds
+- Hotel rooms or public screens with a Smart TV browser
+
+## Frequently asked questions
+
+**Do I need to install an app?**
+No. Everything works in the browser — on both the TV and the phone.
+
+**Does it work on any TV?**
+Yes. Any Smart TV with a modern browser: Samsung, LG, Sony, Philips, Google TV, Android TV. Also works on hotel TVs and public screens with a browser.
+
+**Does it work on iPhone?**
+Yes. Works with Safari and Chrome on any iPhone.
+
+**Does it work on Android?**
+Yes. Works on Samsung, Pixel, Xiaomi, Huawei, Oppo, OnePlus, and all other Android phones.
+
+**Can I use Google Photos or iCloud Photos?**
+Yes. Select photos directly from Google Photos or iCloud Photos using the browser's native photo picker — no extra login or app required.
+
+**Can multiple people upload photos?**
+Yes. Anyone who scans the QR code can join the session and upload photos to the shared TV screen.
+
+**How long does a session last?**
+Sessions expire after 180 minutes of inactivity by default. The host can end the session at any time. Closing the TV browser ends the session immediately.
+
+**Where are my photos stored?**
+Photos are stored temporarily on Cloudflare infrastructure (R2 / edge cache) for the duration of the session only. They are deleted automatically when the session ends. No permanent storage.
+
+**Does Cloudflare analyze my photos?**
+No. Cloudflare acts as a temporary transport layer only. Photos are not analyzed, indexed, or used for any purpose.
+
+**Do you collect personal data?**
+No. No names, emails, phone numbers, advertising identifiers, or any personal information is collected.
+
+**Is the service free?**
+Yes. Core functionality is free with no registration.
+
+**Does it support videos?**
+Not yet. Video support is planned.
+
+**Can I use it at a wedding or party?**
+Yes. This is one of the most popular use cases. Guests can each scan the QR code and add their own photos to the shared screen in real time.
+
+## Technical details
+
+- Infrastructure: Cloudflare R2 for temporary photo storage; Cloudflare edge for delivery
+- Session ID: random, temporary, embedded in QR code only
+- Transport: HTTPS only
+- Photo picker: uses the browser's native file/media picker API — no custom code accesses the photo library
+- TV browser compatibility: any modern Smart TV browser (Chromium-based, WebKit-based)
+- No service workers, no background sync, no persistent local storage of photos
+
+## Author
+
+ViewPhoto.TV was created by Vadim Sazanovich, Amaryllis Polska.
+
+## Pages and URLs
+
+- Home: https://viewphoto.tv/
+- FAQ: https://viewphoto.tv/faq.html
+- Privacy Policy: https://viewphoto.tv/privacy.html
+- Terms of Service: https://viewphoto.tv/terms.html
+- Contact: support@viewphoto.tv

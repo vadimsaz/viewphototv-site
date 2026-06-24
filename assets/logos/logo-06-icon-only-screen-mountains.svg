@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="ViewPhoto.TV icon screen mountains">
+  <defs>
+    <linearGradient id="outer" x1="150" x2="870" y1="130" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6ee7ff"/>
+      <stop offset=".45" stop-color="#5b6dff"/>
+      <stop offset="1" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="inner" x1="240" x2="790" y1="250" y2="690" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1f3fd8"/>
+      <stop offset="1" stop-color="#3f2d93"/>
+    </linearGradient>
+  </defs>
+  <rect x="128" y="160" width="768" height="610" rx="92" fill="url(#outer)"/>
+  <rect x="170" y="202" width="684" height="500" rx="62" fill="url(#inner)"/>
+  <circle cx="352" cy="318" r="58" fill="#ff496e"/>
+  <path d="M204 660 426 426l112 120 113-150 197 264H204Z" fill="#dbeafe"/>
+  <path d="m426 426 112 120-88 114H204Z" fill="#eff6ff" opacity=".82"/>
+  <path d="M516 506 652 396l197 264H474Z" fill="#c7d2fe" opacity=".85"/>
+  <path d="M420 798h184M472 826h80" stroke="#7c5cff" stroke-width="38" stroke-linecap="round"/>
+</svg>
