@@ -176,9 +176,152 @@ header .btn.small {
    =========================== */
 
 .hero {
-    padding-top: 200px;
-    padding-bottom: 200px;
-    text-align: left;
+    padding-top: 160px;
+    padding-bottom: 120px;
+}
+
+.hero-inner {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-text {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.hero-lead {
+    font-size: 24px;
+    color: #444;
+    margin: 20px 0 0;
+    line-height: 1.5;
+}
+
+.hero-desc {
+    font-size: 20px;
+    color: #555;
+    margin: 24px 0 0;
+    max-width: 560px;
+    line-height: 1.6;
+}
+
+.hero-steps {
+    margin-top: 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.hero-step {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 18px;
+    color: #333;
+}
+
+.hero-step-num {
+    width: 32px;
+    height: 32px;
+    background: #000;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+/* QR widget */
+
+.hero-qr {
+    flex-shrink: 0;
+}
+
+.qr-card {
+    background: #fff;
+    border-radius: 24px;
+    padding: 28px 36px;
+    box-shadow: 0 8px 48px rgba(0,0,0,0.12);
+    text-align: center;
+    min-width: 280px;
+}
+
+.qr-label {
+    margin: 0 0 16px;
+    font-size: 13px;
+    color: #888;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.qr-canvas {
+    width: 220px;
+    height: 220px;
+    margin: 0 auto;
+}
+
+.qr-session-code {
+    margin-top: 14px;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: #111;
+    font-family: monospace;
+    min-height: 32px;
+}
+
+.qr-hint {
+    margin: 10px 0 0;
+    font-size: 13px;
+    color: #aaa;
+}
+
+.qr-hint a {
+    color: #007aff;
+    text-decoration: none;
+}
+
+/* Mobile CTA block */
+
+.mobile-cta-block {
+    display: none;
+}
+
+.mobile-cta-block .btn {
+    margin-top: 24px;
+    display: inline-block;
+}
+
+/* TV-only / mobile-only visibility */
+
+.tv-only { display: revert; }
+.mobile-only { display: none; }
+
+@media (max-width: 1023px) {
+    .tv-only { display: none !important; }
+    .mobile-only { display: revert !important; }
+    .mobile-cta-block { display: block !important; }
+
+    .hero {
+        padding-top: 120px;
+        padding-bottom: 80px;
+    }
+
+    .hero-inner {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .hero-lead {
+        font-size: 20px;
+    }
 }
 
 .hero .sub {

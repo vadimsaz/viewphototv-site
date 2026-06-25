@@ -136,47 +136,49 @@
      HERO
      =========================== -->
 <section class="hero">
-    <h1>Show Photos from Your Phone on Any TV - Instantly</h1>
-	<div>
-    <div align="center"><img src="./assets/screens/banner.webp"   alt="Scan QR and watch your photos"</div>
-    </div>
-    <h3>Scan. Choose. Share. Your privacy stays yours.</h3>
+  <div class="hero-inner">
 
-	<p>Just scan the QR code on this screen or tap the button below from your phone. Select the photos you want to share, and they will instantly appear on the TV.</p>
-	<div align="center">
-    <div id="qr-widget" style="margin: 32px auto 0; display: inline-block; text-align: center;">
-      <div id="qr-widget-inner" style="
-        background: #fff;
-        border-radius: 20px;
-        padding: 24px 32px;
-        display: inline-block;
-        box-shadow: 0 4px 32px rgba(0,0,0,0.10);
-      ">
-        <p style="margin: 0 0 12px; font-size: 14px; color: #888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em;">Scan from your phone</p>
-        <div id="qr-code" style="width:180px; height:180px; margin: 0 auto;"></div>
-        <div id="session-code" style="margin-top: 12px; font-size: 22px; font-weight: 600; letter-spacing: 0.12em; color: #111; font-family: monospace;"></div>
-        <p style="margin: 8px 0 0; font-size: 13px; color: #aaa;">
-		or open <a href="https://app.viewphoto.tv" style="color:#007aff;">app.viewphoto.tv</a></p>
+    <!-- Left column: text -->
+    <div class="hero-text">
+      <h1>Show Photos from Your Phone on Any TV — Instantly</h1>
+      <p class="hero-lead">No apps. No accounts. No screen mirroring.<br>Just the photos you choose.</p>
+
+      <!-- TV/desktop only -->
+      <p class="hero-desc tv-only">Scan the QR code on the right from your phone. Select photos from your gallery, Google Photos, or iCloud — and they instantly appear on the big screen.</p>
+
+      <!-- Mobile/tablet only -->
+      <div class="mobile-only mobile-cta-block">
+        <p class="hero-desc">You're on a phone — perfect! Open the app, choose your photos, and watch them on your TV.</p>
+        <a class="btn" href="https://app.viewphoto.tv">Open ViewPhoto.TV →</a>
+      </div>
+
+      <div class="hero-steps tv-only">
+        <div class="hero-step"><span class="hero-step-num">1</span> Open viewphoto.tv on your TV</div>
+        <div class="hero-step"><span class="hero-step-num">2</span> Scan the QR with your phone</div>
+        <div class="hero-step"><span class="hero-step-num">3</span> Select photos — they appear instantly</div>
       </div>
     </div>
-	</div>
-    <p>
-        ViewPhoto.TV solves one of the most annoying problems of the digital era:  
-        <strong>how to quickly, beautifully and safely show photos from your phone on a big TV screen.</strong>
-    </p>
-	<p>No apps. No accounts. No screen mirroring. Just the photos you choose. </p>
 
-	<div align="center">
-		<a class="btn" href="https://app.viewphoto.tv">Open ViewPhoto.TV</a>
-	</div>
+    <!-- Right column: QR widget (TV/desktop only) -->
+    <div class="hero-qr tv-only">
+      <div class="qr-card">
+        <p class="qr-label">Scan from your phone</p>
+        <div id="qr-code" class="qr-canvas"></div>
+        <div id="session-code" class="qr-session-code"></div>
+        <p class="qr-hint">or open <a href="https://app.viewphoto.tv">app.viewphoto.tv</a></p>
+      </div>
+    </div>
 
-	
-
+  </div>
 </section>
 
 <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
 <script>
 (function() {
+  // Don't init QR on mobile/tablet
+  var isMobile = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent) || window.innerWidth < 1024;
+  if (isMobile) return;
+
   var deviceId = localStorage.getItem('vp_device_id');
   if (!deviceId) {
     deviceId = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
@@ -197,8 +199,8 @@
     var uploadUrl = 'https://app.viewphoto.tv/upload/' + sessionCode;
     new QRCode(document.getElementById('qr-code'), {
       text: uploadUrl,
-      width: 180,
-      height: 180,
+      width: 220,
+      height: 220,
       colorDark: '#111111',
       colorLight: '#ffffff',
       correctLevel: QRCode.CorrectLevel.M
@@ -219,7 +221,8 @@
     }, 3000);
   })
   .catch(function() {
-    document.getElementById('qr-widget').style.display = 'none';
+    var heroQr = document.querySelector('.hero-qr');
+    if (heroQr) heroQr.style.display = 'none';
   });
 })();
 </script>
@@ -526,7 +529,7 @@
         Just your photos - beautifully displayed on the big screen.
     </p>
 
-    <a class="btn" href="https://app.viewphoto.tv">Open ViewPhoto.TV</a>
+    <a class="btn tv-only" href="https://app.viewphoto.tv">Open ViewPhoto.TV</a>
 
     <p class="copy">© 2026 ViewPhoto.TV. All rights reserved.</p>
 </footer>
