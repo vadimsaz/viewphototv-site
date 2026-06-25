@@ -620,6 +620,180 @@ blockquote {
 }
 
 /* ===========================
+   COMPARISON GRID
+   =========================== */
+
+.cmp-grid {
+    margin-top: 48px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.08);
+}
+
+.cmp-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1.4fr;
+    align-items: center;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.cmp-row:last-child {
+    border-bottom: none;
+}
+
+.cmp-header {
+    background: #f5f5f7;
+}
+
+.cmp-feature,
+.cmp-col {
+    padding: 16px 18px;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.cmp-feature {
+    font-weight: 600;
+    color: #111;
+    font-size: 15px;
+}
+
+.cmp-col {
+    text-align: center;
+    color: #555;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.cmp-col-other {
+    background: #fff;
+}
+
+.cmp-col-vp {
+    background: #f0f7ff;
+    font-weight: 600;
+    color: #0a84ff;
+}
+
+.cmp-header .cmp-col {
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 14px 18px;
+}
+
+.cmp-header .cmp-col-vp {
+    color: #0a84ff;
+    font-weight: 700;
+}
+
+.cmp-ok {
+    font-size: 20px;
+    color: #30d158;
+    line-height: 1;
+}
+
+.cmp-no {
+    font-size: 20px;
+    color: #ff3b30;
+    line-height: 1;
+}
+
+.cmp-note {
+    font-size: 12px;
+    color: #888;
+    font-weight: 400;
+}
+
+.cmp-col-vp .cmp-note {
+    color: #5aabff;
+}
+
+/* Mobile: stack into feature cards */
+@media (max-width: 768px) {
+    .cmp-grid {
+        border: none;
+        border-radius: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .cmp-header {
+        display: none;
+    }
+
+    .cmp-row {
+        display: block;
+        border-radius: 16px;
+        border: 1px solid rgba(0,0,0,0.08);
+        overflow: hidden;
+        background: #fff;
+    }
+
+    .cmp-feature {
+        display: block;
+        background: #f5f5f7;
+        padding: 14px 18px;
+        font-size: 15px;
+        border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .cmp-col {
+        display: grid;
+        grid-template-columns: 80px 1fr auto;
+        align-items: center;
+        text-align: left;
+        padding: 12px 18px;
+        gap: 0;
+        border-bottom: 1px solid rgba(0,0,0,0.04);
+    }
+
+    .cmp-col:last-child {
+        border-bottom: none;
+    }
+
+    .cmp-col::before {
+        font-size: 12px;
+        font-weight: 600;
+        color: #aaa;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+    }
+
+    .cmp-col-other:nth-child(2)::before { content: "AirPlay"; }
+    .cmp-col-other:nth-child(3)::before { content: "Miracast"; }
+    .cmp-col-other:nth-child(4)::before { content: "HDMI"; }
+    .cmp-col-vp::before { content: "ViewPhoto.TV"; color: #0a84ff; }
+
+    .cmp-col .cmp-ok,
+    .cmp-col .cmp-no {
+        order: 2;
+        font-size: 18px;
+    }
+
+    .cmp-col .cmp-note {
+        order: 1;
+        grid-column: 2;
+        font-size: 13px;
+        color: #555;
+    }
+
+    .cmp-col-vp {
+        background: #f0f7ff;
+    }
+
+    .cmp-col-vp .cmp-note {
+        color: #0a84ff;
+        font-weight: 500;
+    }
+}
+
+/* ===========================
    FOOTER
    =========================== */
 
