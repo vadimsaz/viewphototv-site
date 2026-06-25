@@ -146,15 +146,72 @@
         ViewPhoto.TV solves one of the most annoying problems of the digital era:  
         <strong>how to quickly, beautifully and safely show photos from your phone on a big TV screen.</strong>
     </p>
-
+	<div align="center">
     <a class="btn" href="https://app.viewphoto.tv">Open ViewPhoto.TV</a>
+	</div>
 
-    <p class="sub">
-        Open the website on your TV → scan the QR code → choose photos → done.
-    </p>
+    
 
+	<p>Just scan the QR code on this screen or tap the button below from your phone. Select the photos you want to share, and they will instantly appear on the TV.</p>
+
+	<p>No apps. No accounts. No screen mirroring. Just the photos you choose. </p>
+	<div align="center">
+    <div id="qr-widget" style="margin: 32px auto 0; display: inline-block; text-align: center;">
+      <div id="qr-widget-inner" style="
+        background: #fff;
+        border-radius: 20px;
+        padding: 24px 32px;
+        display: inline-block;
+        box-shadow: 0 4px 32px rgba(0,0,0,0.10);
+      ">
+        <p style="margin: 0 0 12px; font-size: 14px; color: #888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em;">Scan from your phone</p>
+        <div id="qr-code" style="width:180px; height:180px; margin: 0 auto;"></div>
+        <div id="session-code" style="margin-top: 12px; font-size: 22px; font-weight: 600; letter-spacing: 0.12em; color: #111; font-family: monospace;"></div>
+        <p style="margin: 8px 0 0; font-size: 13px; color: #aaa;">
+		or open <a href="https://app.viewphoto.tv" style="color:#007aff;">app.viewphoto.tv</a></p>
+      </div>
+    </div>
+	</div>
+	
+	
 
 </section>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+<script>
+(function() {
+  var deviceId = localStorage.getItem('vp_device_id');
+  if (!deviceId) {
+    deviceId = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      var r = Math.random() * 16 | 0;
+      return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+    });
+    localStorage.setItem('vp_device_id', deviceId);
+  }
+
+  fetch('https://app.viewphoto.tv/api/sessions', {
+    method: 'POST',
+    headers: { 'X-Device-Id': deviceId }
+  })
+  .then(function(r) { return r.json(); })
+  .then(function(data) {
+    if (!data.code) return;
+    var uploadUrl = 'https://app.viewphoto.tv/upload/' + data.code;
+    new QRCode(document.getElementById('qr-code'), {
+      text: uploadUrl,
+      width: 180,
+      height: 180,
+      colorDark: '#111111',
+      colorLight: '#ffffff',
+      correctLevel: QRCode.CorrectLevel.M
+    });
+    document.getElementById('session-code').textContent = data.code;
+  })
+  .catch(function() {
+    document.getElementById('qr-widget').style.display = 'none';
+  });
+})();
+</script>
 
 
 <!-- ===========================
