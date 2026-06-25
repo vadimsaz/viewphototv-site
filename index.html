@@ -193,7 +193,8 @@
   .then(function(r) { return r.json(); })
   .then(function(data) {
     if (!data.code) return;
-    var uploadUrl = 'https://app.viewphoto.tv/upload/' + data.code;
+    var sessionCode = data.code;
+    var uploadUrl = 'https://app.viewphoto.tv/upload/' + sessionCode;
     new QRCode(document.getElementById('qr-code'), {
       text: uploadUrl,
       width: 180,
@@ -202,7 +203,20 @@
       colorLight: '#ffffff',
       correctLevel: QRCode.CorrectLevel.M
     });
-    document.getElementById('session-code').textContent = data.code;
+    document.getElementById('session-code').textContent = sessionCode;
+
+    // Poll for upload start → redirect to viewer
+    var pollInterval = setInterval(function() {
+      fetch('https://app.viewphoto.tv/api/sessions/' + sessionCode + '/ping')
+        .then(function(r) { return r.json(); })
+        .then(function(ping) {
+          if (ping.uploadStarted) {
+            clearInterval(pollInterval);
+            window.location.href = 'https://app.viewphoto.tv/view/' + sessionCode;
+          }
+        })
+        .catch(function() {});
+    }, 3000);
   })
   .catch(function() {
     document.getElementById('qr-widget').style.display = 'none';
