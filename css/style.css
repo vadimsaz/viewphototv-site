@@ -79,9 +79,9 @@ header {
 }
 
 .logo {
-    font-size: 22px;
-    font-weight: 600;
-    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
 }
 
 /* Desktop nav */
